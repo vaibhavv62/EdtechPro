@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Generate Lead</title>
+{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center;">Generate Lead</h1>
+    <div class="container" style="width: 55%;">
+        <form method="post" class="jumbotron">
+            {% csrf_token %}
+            {{form|crispy}}
+            <input type="submit" value="Generate Lead" class="btn btn-primary">
+        </form>
+    </div>
+{% endblock %}
