@@ -91,6 +91,7 @@ lead_action_took_choices = (
 # Create your models here.
 class Lead(models.Model):
     date = models.DateTimeField(auto_now_add=True)
+    handled_by = models.CharField(max_length=32)
     type_of_lead = models.CharField(max_length=32, choices=type_of_lead_choices)
     lead_stage = models.CharField(max_length=32, choices=lead_stage_choices)
     lead_action_took = models.CharField(max_length=64, choices=lead_action_took_choices)

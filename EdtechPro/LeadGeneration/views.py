@@ -6,7 +6,12 @@ from .models import Lead
 
 
 def generateLeadView(request):
-    form = LeadModelForm()#BlankForm
+    print("r.u.u",request.user)
+    form = LeadModelForm(
+        initial={
+            'handled_by':request.user
+        }
+    )#BlankForm
     if request.method == 'POST':
         form = LeadModelForm(request.POST)
         if form.is_valid():

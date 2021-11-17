@@ -24,6 +24,7 @@ class LeadModelForm(forms.ModelForm):
                     'placeholder':'user@domain.com'
                 }
             ),
-            'referred_by':forms.TextInput(attrs={'placeholder':'FullName - Batch - MobileNumber'})
+            'referred_by':forms.TextInput(attrs={'placeholder':'FullName - Batch - MobileNumber'}),
+            'handled_by':forms.TextInput(attrs={'readonly':True})
 
         }
