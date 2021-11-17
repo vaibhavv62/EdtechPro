@@ -65,6 +65,9 @@ course_interested_choices = (
     ('C++','C++'),
     ('Data Structures','Data Structures'),
     ('UI(FrontEnd)','UI(FrontEnd)'),
+    ('Aptitude','Aptitude'),
+    ('AWS(Cloud Computing)','AWS(Cloud Computing)'),
+    ('Spoken English','Spoken English'),
 )
 
 type_of_lead_choices = (
@@ -111,7 +114,7 @@ class Lead(models.Model):
     type_of_course = models.CharField(max_length=32,choices=type_of_course_choices)
     mode_of_course = models.CharField(max_length=32,choices=mode_of_course_choices)
     course_interested = models.CharField(max_length=32,choices=course_interested_choices)
-    current_status_notes = models.CharField(max_length=64)
+    current_status_notes = models.CharField(max_length=128)
 
 
 
