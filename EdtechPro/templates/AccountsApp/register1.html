@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Register Page</title>
+{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center;">Register</h1>
+    <div class="container" style="width: 55%;">
+        <form method="post" class="jumbotron">
+            {% csrf_token %}
+            {{form|crispy}}
+{#            <input type="submit" value="Register" class="btn btn-primary">#}
+            <br>
+            <div class="form-row">
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+                <div class="col">
+                    <a href="{% url 'login' %}">Already have an account?</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

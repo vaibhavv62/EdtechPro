@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+        <title>Login</title>
+        {% endblock %}
+
+
+{% block content %}
+    <h1 style="text-align: center;">Login</h1>
+    <div class="container" style="width: 40%;">
+        <form method="post" class="jumbotron">
+            {% csrf_token %}
+
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'error' %}
+                        <div class="alert alert-danger">
+                    {% else %}
+                        <div class="alert alert-{{ message.tags }}">
+                    {% endif %}
+                            {{ message }}
+                        </div>
+                {% endfor %}
+            {% endif %}
+
+            <label for="uname">Enter Username:</label>
+            <input type="text" name="uname" id="uname" class="form-control"> <br>
+            <label for="pw">Enter Password:</label>
+            <input type="password" name="pw" id="pw"  class="form-control">
+            <br>
+            <div class="form-row">
+                <div class="col-8">
+                    <button type="submit" class="btn btn-primary mt-2">Login</button>
+                </div>
+                <div class="col">
+                    <a href="{% url 'register' %}">Need an account?</a>
+                    <a href="{% url 'forgotpw' %}">Forgot Password?</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}
