@@ -12,6 +12,8 @@
         <form method="post" class="jumbotron">
             {% csrf_token %}
 
+            <h6 style="text-align: center; color:salmon;">Login is mandatory!</h6>
+
             {% if messages %}
                 {% for message in messages %}
                     {% if message.tags == 'error' %}
