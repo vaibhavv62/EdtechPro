@@ -2,7 +2,9 @@ from django import forms
 from .models import Lead
 
 class LeadModelForm(forms.ModelForm):
+    # required_css_class = "required"
     class Meta:
+
         model = Lead
         fields = '__all__'
         labels = {
