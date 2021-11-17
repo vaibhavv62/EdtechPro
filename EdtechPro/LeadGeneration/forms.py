@@ -8,9 +8,22 @@ class LeadModelForm(forms.ModelForm):
         model = Lead
         fields = '__all__'
         labels = {
-            'mobile_number2':'Alternative Number',
-            'stream':'Stream/Branch'
+            'mobile_number':'Primary Mobile Number',
+            'mobile_number2':'Secondary(Alternative) Number',
+            'stream':'Stream/Branch',
+            'school_college':'School/College Name'
+        }
+        help_texts = {
+            'mobile_number':'Preferred WhatsApp Number, 10 digits only!',
+            'mobile_number2':'10 digits only!'
         }
         widgets = {
             'current_status_notes':forms.Textarea(),
+            'email':forms.TextInput(
+                attrs={
+                    'placeholder':'user@domain.com'
+                }
+            ),
+            'referred_by':forms.TextInput(attrs={'placeholder':'FullName - Batch - MobileNumber'})
+
         }

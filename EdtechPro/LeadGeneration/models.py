@@ -105,6 +105,7 @@ class Lead(models.Model):
     current_address = models.CharField(max_length=64)
     highest_qualification = models.CharField(max_length=32,choices=highest_qualification_choices)
     stream = models.CharField(max_length=32,choices=stream_choices)
+    school_college = models.CharField(max_length=64)
     year_of_passing = models.CharField(max_length=32,choices=year_of_passing_choices)
     type_of_course = models.CharField(max_length=32,choices=type_of_course_choices)
     mode_of_course = models.CharField(max_length=32,choices=mode_of_course_choices)
