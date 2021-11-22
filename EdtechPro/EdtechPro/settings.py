@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'LeadGeneration',
     'crispy_forms',
-    'AccountsApp'
+    'AccountsApp',
+    'ToDoApp'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

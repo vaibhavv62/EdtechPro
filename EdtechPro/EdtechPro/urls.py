@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('leads/', include('LeadGeneration.urls')),
     path('accounts/', include('AccountsApp.urls')),
+    path('to-do/', include('ToDoApp.urls')),
 ]

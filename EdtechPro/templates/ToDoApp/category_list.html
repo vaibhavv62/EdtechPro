@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>All Tasks</title>
+{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center;">All Tasks</h1>
+    <table class="table table-dark table-striped" style="width: 70%; margin-left: auto;margin-right: auto;">
+        <tr>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {% for cat in object_list %}
+            <tr>
+                <td>{{cat.id}}</td>
+                <td>{{cat.category_name}}</td>
+                <td>
+{#                    <a href="{% url 'update_task' task.id %}">#}
+                    <a href="">
+                        <button class="btn btn-warning">Update</button>
+                    </a>
+                </td>
+                <td>
+{#                    <a href="{% url 'delete_task' task.id %}">#}
+                    <a href="">
+                        <button class="btn btn-danger">Delete</button>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <div style="text-align: center;">
+
+        <a href="{% url 'add_category' %}">
+            <button class="btn btn-success">Add Category</button>
+        </a>
+    </div>
+{% endblock %}

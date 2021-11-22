@@ -12,7 +12,7 @@ def registerView(request):
             print('User Added')
             form.save()
             return redirect('login')
-    template_name = 'AccountsApp/register1.html'
+    template_name = 'AccountsApp/register.html'
     context = {'form':form}
     return render(request,template_name,context)
 
