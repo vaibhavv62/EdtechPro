@@ -15,7 +15,7 @@
     <ul class="mynavbar">
         <li><a href="{% url 'generate_lead' %}">Generate Lead</a></li>
         <li><a href="{% url 'show_leads' %}">Show Leads</a></li>
-        <li><a href="{% url 'show_task' %}">Agenda</a></li>
+        <li><a href="{% url 'show_task' %}">My Agenda</a></li>
         <span class="authlinks">
             {% if user.is_authenticated %}
                 <li><a>Hello, {{user.username}}</a></li>
