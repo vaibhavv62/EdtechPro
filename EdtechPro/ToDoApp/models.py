@@ -8,8 +8,11 @@ class Category(models.Model):
         return self.category_name
 
 class Task(models.Model):
-    title = models.CharField(max_length=32)
-    content = models.CharField(max_length=512)
-    created = models.DateTimeField(auto_now_add=True)
-    due_date = models.DateTimeField()
     category = models.ForeignKey(Category,default="General",on_delete=models.CASCADE)
+    title = models.CharField(max_length=32)
+    details = models.CharField(max_length=512,blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    due_date_time = models.DateTimeField()
+
+    class Meta:
+        ordering = ["-created"]  # ordering by the created field

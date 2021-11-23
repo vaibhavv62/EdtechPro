@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Add Task</title>
+{% endblock %}
+
+{% block content %}
+
+    <h1 style="text-align: center;">Add Task</h1>
+    <div class="container" style="width: 55%;">
+        <form method="post" class="jumbotron">
+            {% csrf_token %}
+            <a href="{% url 'show_category' %}" style="float: right;">Manage Categories</a>
+{#            <br><br>#}
+            {{form|crispy}}
+            <input type="submit" value="Add Task" class="btn btn-primary">
+            <a href="{% url 'show_task' %}">
+                <input type="button" value="Cancel" class="btn btn-danger">
+            </a>
+            <br>
+        </form>
+    </div>
+
+
+{% endblock %}

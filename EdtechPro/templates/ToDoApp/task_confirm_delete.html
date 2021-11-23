@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Delete Task</title>
+{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center;">Delete Task</h1>
+    <div class="container" style="width: 55%;">
+        <form method="post" class="jumbotron">
+            {% csrf_token %}
+            <p>Are you sure you want to delete {{ object.title }} Task?</p>
+            <input type="submit" value="Delete" class="btn btn-danger">
+            <a href="{% url 'show_task' %}">
+                <input type="button" value="Cancel" class="btn btn-success">
+            </a>
+        </form>
+    </div>
+{% endblock %}

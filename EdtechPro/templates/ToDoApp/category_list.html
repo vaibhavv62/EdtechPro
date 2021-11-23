@@ -1,11 +1,11 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    <title>All Tasks</title>
+    <title>All Categories</title>
 {% endblock %}
 
 {% block content %}
-    <h1 style="text-align: center;">All Tasks</h1>
+    <h1 style="text-align: center;">All Categories</h1>
     <table class="table table-dark table-striped" style="width: 70%; margin-left: auto;margin-right: auto;">
         <tr>
             <th>ID</th>
@@ -18,14 +18,12 @@
                 <td>{{cat.id}}</td>
                 <td>{{cat.category_name}}</td>
                 <td>
-{#                    <a href="{% url 'update_task' task.id %}">#}
-                    <a href="">
+                    <a href="{% url 'update_category' cat.id %}">
                         <button class="btn btn-warning">Update</button>
                     </a>
                 </td>
                 <td>
-{#                    <a href="{% url 'delete_task' task.id %}">#}
-                    <a href="">
+                    <a href="{% url 'delete_category' cat.id %}">
                         <button class="btn btn-danger">Delete</button>
                     </a>
                 </td>
@@ -37,6 +35,9 @@
 
         <a href="{% url 'add_category' %}">
             <button class="btn btn-success">Add Category</button>
+        </a>
+        <a href="{% url 'show_task' %}">
+            <button class="btn btn-info">Show Tasks</button>
         </a>
     </div>
 {% endblock %}
