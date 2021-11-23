@@ -9,6 +9,7 @@ class Category(models.Model):
 
 class Task(models.Model):
     category = models.ForeignKey(Category,default="General",on_delete=models.CASCADE)
+    task_for = models.CharField(max_length=32)
     title = models.CharField(max_length=32)
     details = models.CharField(max_length=512,blank=True)
     created = models.DateTimeField(auto_now_add=True)

@@ -8,5 +8,6 @@ class TaskModelForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'due_date_time':forms.DateInput(attrs={'type':'datetime-local'}),
-            'details':forms.Textarea()
+            'details':forms.Textarea(),
+            'task_for':forms.HiddenInput()
         }
